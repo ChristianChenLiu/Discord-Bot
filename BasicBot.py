@@ -13,6 +13,8 @@ async def on_message(message):
         return
     if message.content.startswith("$hello"):
         await message.channel.send("Hello")
+    elif message.content.startswith("$inspire"):
+        await message.channel.send(get_quote())
 
 load_dotenv(".env")
 client.run(os.getenv("BASIC_DISCORD_TOKEN"))
